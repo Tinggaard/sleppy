@@ -5,4 +5,4 @@ The page itself is made with help from [Bootstrap](https://getbootstrap.com "Boo
 You can preview the page at [https://tinggaard.github.io/sleppy/](https://tinggaard.github.io/sleppy/)
 
 ## Licence
-The repo is licenced under [GPL-3.0](../../blob/master/LICENSE)
+The repo is licenced under [GPL-3.0](/LICENSE)
