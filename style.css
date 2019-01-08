@@ -1,7 +1,6 @@
 html, body {
 	font-family: 'Lato', sans-serif;
 	background-color: lightgrey !important;
-	overflow: auto;
 	height: 100%;
 	width: 100%;
 }
@@ -11,4 +10,15 @@ html, body {
 	bottom: 0;
 	width: 100%;
 	margin: 0;
+}
+
+.card-columns > .card {
+	  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.toast {
+	position: fixed;
+	right: 2%;
+	bottom: 2%;
+	z-index: 1030;
 }
