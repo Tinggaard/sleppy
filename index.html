@@ -7,8 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<!--Links-->
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="shortcut icon" type="image/x-icon" href="img/bed-solid.ico">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="img/logo.png">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 	<title>Sleppy</title>
@@ -60,25 +60,37 @@
 										<input type="checkbox" class="custom-control-input" id="customSwitch1">
 										<label class="custom-control-label" for="customSwitch1">Slå programmet til!</label>
 									</div>
+									<div class="custom-control custom-switch">
+										<input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+										<label class="custom-control-label" for="customSwitch2">Slå nedtælling til!</label>
+									</div>
+									<div class="custom-control custom-switch">
+										<input type="checkbox" class="custom-control-input" id="customSwitch3" disabled>
+										<label class="custom-control-label" for="customSwitch3">Tillad overskridelse</label>
+									</div>
 									<br>
 									<br>
 									<div class="row">
 										<div class="col-6">
 											<h6 class="h6">Vælg sengetid</h6>
 											<select class="custom-select">
-												<option selected>Open this select menu</option>
-												<option value="1">One</option>
-												<option value="2">Two</option>
-												<option value="3">Three</option>
+												<option value="21:30">21:30</option>
+												<option value="22:00" selected>22:00</option>
+												<option value="22:30">22:30</option>
+												<option value="23:00">23:00</option>
+												<option value="23:30">23:30</option>
+												<option value="00:00">00:00</option>
 											</select>
 											<br>
 											<br>
 											<h6 class="h6">Vælg oppetid</h6>
 											<select class="custom-select">
-												<option selected>Open this select menu</option>
-												<option value="1">One</option>
-												<option value="2">Two</option>
-												<option value="3">Three</option>
+												<option value="6:00">6:00</option>
+												<option value="6:15">6:15</option>
+												<option value="6:30" selected>6:30</option>
+												<option value="6:45">6:45</option>
+												<option value="7:00">7:00</option>
+												<option value="7:15">7:15</option>
 											</select>
 										</div>
 									</div>
@@ -234,7 +246,10 @@
 	<!--Navbar-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark position-fixed" style="top: 0px; right: 0px; left: 0px; z-index: 1;" id="navbar">
 		<div class="container">
-			<a class="navbar-brand ml-3" href="#">Sleppy</a>
+			<a class="navbar-brand ml-3" href="#">
+				<img src="img/logo.png" width="30" height="30">
+				 Sleppy
+			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
 			 aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -268,73 +283,62 @@
 	<div class="container pb-5">
 
 		
+		
+		
+		
+
 		<!--Main image-->
 		<div class="row justify-content-around pt-3" id="status">
-			<div class="col-8">
-				<h3 class="h3 pt-5 text-justify">Status</h3>
-				<img class="mx-auto d-block rounded shadow" src="img/750x400.png" alt="Status">
+			<div class="col-8 text-center">
+				<h2 class="h2 pt-5 text-justify">Status</h2>
+
+				<h5 class="h5 pt-1 mx-auto">Slukker for trådløse radioer om:</h5>
+				<!--Nedtælling-->
+				<div class="mx-auto" id="countdown">
+				</div>
+
+				<!--Indstillinger-billede-->
+				<img class="mx-auto img-fluid rounded pt-2" src="img/settings.png" alt="Status">
 			</div>
 		</div>
 	
+
+		
 		
 		<!--Nyheder-->
-		<div class="pt-5" id="stats">
-			<h3 class="h3 pb-2 text-justify">Seneste nyt</h3>
-			<div class="card-columns">
-				<div class="card bg-light border-secondary">
-					<img class="card-img-top" src="img/stats1.png" alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">Din sove-rytme</h5>
-						<p class="card-text">Her står noget om hvordan du har klaret dig - 
-							om du er godt med eller skal til at tag dig sammen!</p>
-						<p class="card-text"><small class="text-muted">Sidst opdateret: 43 min siden</small></p>
-					</div>
+		<div class="p-5 card-deck" id="stats">
+
+			<div class="card bg-light border-secondary">
+				<div class="card-header">
+					Din sove-rytme
 				</div>
-				<div class="card bg-light border-secondary p-3">
-					<blockquote class="blockquote mb-0 card-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-					</blockquote>
-				</div>
-				<div class="card bg-light border-secondary">
-					<img class="card-img-top" src="img/750x400.png" alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">Her er et andet billede med noget statistik</h5>
-						<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-					</div>
-				</div>
-				<div class="card bg-primary text-white text-center p-3">
-					<blockquote class="blockquote mb-0">
-						<p>Her står noget positivt! Som også er meget motiverende.</p>
-					</blockquote>
-				</div>
-				<div class="card bg-light border-secondary text-center">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-					</div>
-				</div>
-				<div class="card bg-light border-secondary">
-					<img class="card-img" src="img/1000x700.png" alt="Card image">
-				</div>
-				<div class="card bg-light border-secondary p-3">
-					<blockquote class="blockquote mb-0">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-					</blockquote>
-				</div>
-				<div class="card bg-light border-secondary">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is another card with title and supporting text below. This card has some additional
-							content to make it slightly taller overall.</p>
-					</div>
+
+					<img class="card-img-top" src="img/stats.png">
+
+				<div class="card-footer">
+					<small class="text-muted">Sidst opdatetet 9 timer siden</small>
 				</div>
 			</div>
+
+
+			<div class="card bg-light border-secondary">
+				<div class="card-header">
+					Din dag
+				</div>
+				
+				<div id="piechart"></div>
+				
+				<div class="card-footer">
+					<small class="text-muted">Sidst opdatetet 6 timer siden</small>
+				</div>
+			</div>
+
 		</div>
 
 		<!--Highscore tabel-->
-		<div class="row justify-content-around pt-5" id="accomplishments">
+		<div class="row justify-content-around pt-3" id="accomplishments">
 			<div class="col-8 my-5">
-				<h3 class="h3 pb-2 text-justify">Highscores</h3>
+				<h2 class="h2 pb-2 text-justify">Præstationer</h2>
 				<table class="table table-hover table-striped border border-dark shadow-lg">
 					<thead class="thead-dark">
 						<tr>
@@ -377,7 +381,7 @@
 			</button>
 		</div>
 		<div class="toast-body">
-			Tillykke! Du har klaret <a href="#accomplishments" class="text-reset">flere fremskridt</a>
+			Tillykke! Du har klaret <a href="#accomplishments" class="text-reset">flere præstationer</a>
 		</div>
 	</div>
 
@@ -409,11 +413,11 @@
 				<div class="col-auto" style="line-height: 100px;">
 					<span class="links">
 						<a href="https://github.com/Tinggaard" class="text-dark"><i class="fab fa-github"></i></a>
-						<a href="https://www.facebook.com/JensTinglord" class="text-dark"><i class="fab fa-facebook"></i></a>
 						<a href="http://reddit.com/u/tinggaard" class="text-dark"><i class="fab fa-reddit-alien"></i></a>
-						<a href="https://www.instagram.com/jenstinggaard/" class="text-dark"><i class="fab fa-instagram"></i></a>
-						<a href="https://www.snapchat.com/add/jenstinggaard" class="text-dark"><i class="fab fa-snapchat-ghost"></i></a>
 						<a href="https://twitter.com/JensTinggaard" class="text-dark"><i class="fab fa-twitter"></i></a>
+						<a href="https://www.snapchat.com/add/jenstinggaard" class="text-dark"><i class="fab fa-snapchat-ghost"></i></a>
+						<a href="https://www.facebook.com/JensTinglord" class="text-dark"><i class="fab fa-facebook"></i></a>
+						<a href="https://www.instagram.com/jenstinggaard/" class="text-dark"><i class="fab fa-instagram"></i></a>
 					</span>
 				</div>
 			</div>
@@ -427,7 +431,9 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-	<script src="script.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/countdown.js"></script>
 
  </body>
  </html>

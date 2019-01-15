@@ -37,3 +37,10 @@ footer {
 .links > a {
 	margin: .25rem;
 }
+
+
+#countdown {
+	font-size: 4vw;
+	color: #555;
+}
+
