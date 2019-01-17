@@ -98,7 +98,7 @@
 
 								<!--Profil-->
 								<div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-									Profile
+									Profil indstillinger
 								</div>
 
 								<!--Sikkerhed-->
@@ -107,7 +107,7 @@
 									<div class="form-group">
 										<div class="form-group">
 											<label for="exampleInputPassword1">Gammelt kodeord</label>
-											<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+											<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Kodeord">
 										</div>
 										<br>
 										<div class="form-group">
@@ -118,6 +118,7 @@
 											<label for="exampleInputPassword3">Gentag nyt kodeord</label>
 											<input type="password" class="form-control" id="exampleInputPassword3" placeholder="Kodeord">
 										</div>
+										<button type="submit" class="btn btn-danger">Skift kodeord</button>
 									</div>
 									<br>
 									<h4 class="h4">Noget andet</h4>
@@ -276,115 +277,125 @@
 	</nav>
 	
 
+	<div id="main">
+		<!--Main container-->
+		<div class="container pb-5">
 
 
+			<!--Main image-->
+			<div class="row justify-content-around pt-3" id="status">
+				<div class="col-8 text-center">
+					<h2 class="h2 pt-5 text-justify">Status</h2>
 
-	<!--Main container-->
-	<div class="container pb-5">
+					<h5 class="h5 pt-1 mx-auto">Slukker for trådløse radioer om:</h5>
+					<!--Nedtælling-->
+					<div class="mx-auto" id="countdown">
+					</div>
 
-		
-		
-		
-		
-
-		<!--Main image-->
-		<div class="row justify-content-around pt-3" id="status">
-			<div class="col-8 text-center">
-				<h2 class="h2 pt-5 text-justify">Status</h2>
-
-				<h5 class="h5 pt-1 mx-auto">Slukker for trådløse radioer om:</h5>
-				<!--Nedtælling-->
-				<div class="mx-auto" id="countdown">
+					<!--Indstillinger-billede-->
+					<img class="mx-auto img-fluid rounded pt-2" src="img/settings.png" alt="Status">
 				</div>
+			</div>
+					
+			
+			<!--Nyheder-->
+			<h2 class="h2 pt-5" id="stats">Statistikker</h2>
+			<div class="row">
+				<div class="col">
+					<div class="card bg-light border-secondary">
+						<div class="card-header">
+							Din søvnrytme
+						</div>
+						
+						<div id="linechart"></div>
+						
+						<div class="card-footer">
+							<small class="text-muted">Sidst opdatetet 9 timer siden</small>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card bg-light border-secondary">
+						<div class="card-header">
+							Din dag
+						</div>
+					
+						<div id="piechart"></div>
+					
+						<div class="card-footer">
+							<small class="text-muted">Sidst opdatetet 6 timer siden</small>
+						</div>
+					</div>
+				</div>
+			</div>
 
-				<!--Indstillinger-billede-->
-				<img class="mx-auto img-fluid rounded pt-2" src="img/settings.png" alt="Status">
+
+			<!--Highscore tabel-->
+			<div class="row justify-content-around pt-3" id="accomplishments">
+				<div class="col-8 my-5">
+					<h2 class="h2 pb-2 text-justify">Præstationer</h2>
+					<table class="table table-hover table-striped border border-dark shadow-lg">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Navn</th>
+								<th scope="col">Point</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Jens Tinggaard</td>
+								<td>1476</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Oscar Sørensen</td>
+								<td>1347</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Laura Jensen</td>
+								<td>1322</td>
+							</tr>
+							<tr>
+								<th scope="row">4</th>
+								<td>Nicklas Johansen</td>
+								<td>1323</td>
+							</tr>
+							<tr>
+								<th scope="row">5</th>
+								<td>Nikolai Prip</td>
+								<td>1298</td>
+							</tr>
+							
+							<tr>
+								<th scope="row">6</th>
+								<td>Emma Clausen</td>
+								<td>1241</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
-	
+
 
 		
-		
-		<!--Nyheder-->
-		<div class="p-5 card-deck" id="stats">
-
-			<div class="card bg-light border-secondary">
-				<div class="card-header">
-					Din sove-rytme
-				</div>
-
-					<img class="card-img-top" src="img/stats.png">
-
-				<div class="card-footer">
-					<small class="text-muted">Sidst opdatetet 9 timer siden</small>
-				</div>
+		<!--Notifikation-->
+		<div class="toast" role="alert" aria-live="polite" aria-atomic="true" data-delay="5000" style="display: none;">
+			<div class="toast-header">
+				<strong class="mr-auto"><i class="fas fa-trophy"></i> Præstationer</strong>
+				<small class="text-muted">11 min siden</small>
+				<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
 			</div>
-
-
-			<div class="card bg-light border-secondary">
-				<div class="card-header">
-					Din dag
-				</div>
-				
-				<div id="piechart"></div>
-				
-				<div class="card-footer">
-					<small class="text-muted">Sidst opdatetet 6 timer siden</small>
-				</div>
-			</div>
-
-		</div>
-
-		<!--Highscore tabel-->
-		<div class="row justify-content-around pt-3" id="accomplishments">
-			<div class="col-8 my-5">
-				<h2 class="h2 pb-2 text-justify">Præstationer</h2>
-				<table class="table table-hover table-striped border border-dark shadow-lg">
-					<thead class="thead-dark">
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Navn</th>
-							<th scope="col">Score</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>Jens Tinggaard</td>
-							<td>9000+</td>
-						</tr>
-						<tr>
-							<th scope="row">2</th>
-							<td>Nicklas Johansen</td>
-							<td>3</td>
-						</tr>
-						<tr>
-							<th scope="row">2</th>
-							<td>Nikolai Prip</td>
-							<td>3</td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="toast-body">
+				Tillykke! Du har klaret <a href="#accomplishments" class="text-reset">flere præstationer</a>
 			</div>
 		</div>
 	</div>
-
-
-	
-	<!--Notifikation-->
-	<div class="toast" role="alert" aria-live="polite" aria-atomic="true" data-delay="5000" style="display: none;">
-		<div class="toast-header">
-			<strong class="mr-auto"><i class="fas fa-trophy"></i> Præstationer</strong>
-			<small class="text-muted">11 min siden</small>
-			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-		<div class="toast-body">
-			Tillykke! Du har klaret <a href="#accomplishments" class="text-reset">flere præstationer</a>
-		</div>
-	</div>
-
 
 	<!--Footer-->
 	<footer class="footer" style="line-height: 50px;">
